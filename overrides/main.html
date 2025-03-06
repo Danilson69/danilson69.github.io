@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if page and page.url == "" %} {# Hanya tampil di homepage #}
+  <style>
+    .md-sidebar { display: none; } /* Sembunyikan sidebar */
+    .md-content { margin-left: auto; margin-right: auto; width: 100%; } /* Rata tengah */
+  </style>
+    <!-- Hero Section -->
+    <div id="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Technical Documentation</h1>
+            <p>Selamat Datang Di Web Dokumentasi. Temukan tutorial, ManualBook, contoh kode, referensi API, dan semua resource yang Anda perlukan. Untuk mulai 
+              Klik Tombol Get started.</p>
+            <div class="hero-buttons">
+                <a href="{{ '/GetStarted/Start/' | url }}" class="btn btn-primary">Get started</a>
+                <a href="{{ '/GetStarted/Start/' | url }}" class="btn btn-secondary">Learn more</a>
+            </div>
+        </div>
+        <div class="hero-logo">
+          <img src="{{ 'assets/logo.png' | url }}" alt="Logo" class="hero-logo">
+      </div>
+    </div>
+
+    <!-- Featured Section -->
+    <div id="featured-section">
+      <h2>Dokumentasi Yang Tersedia</h2>
+      <div class="featured-container">
+          <div class="featured-item">
+              <div class="featured-icon">
+                  <img src="{{ 'assets/book.png' | url }}" alt="Markdown">
+              </div>
+              <div class="featured-content">
+                  <h3>Proses Instalisasi</h3>
+                  <p>Langkah-langkah untuk menginstall salah satu framework yang digunakan oleh kampus.</p>
+              </div>
+          </div>
+          <div class="featured-item">
+              <div class="featured-icon">
+                  <img src="{{ 'assets/book.png' | url }}" alt="Devices">
+              </div>
+              <div class="featured-content">
+                  <h3>ManualBook</h3>
+                  <p>Langkah-langkah Menggunakan KIIS Yang Diperlukan Oleh Mahasiswa, Dosen,dan Kaprodi.</p>
+              </div>
+          </div>
+          <div class="featured-item">
+              <div class="featured-icon">
+                  <img src="{{ 'assets/book.png' | url }}" alt="Fast">
+              </div>
+              <div class="featured-content">
+                  <h3>Software Design Document</h3>
+                  <p>Database Desciption yang digunakan Website Kampus.</p>
+              </div>
+          </div>
+          <div class="featured-item">
+              <div class="featured-icon">
+                  <img src="{{ 'assets/book.png' | url }}" alt="Ownership">
+              </div>
+              <div class="featured-content">
+                  <h3>Probis</h3>
+                  <p>Own your documentation's complete sources and guarantee integrity and security.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+    <!-- Article Section -->
+    <div id="article-section">
+      <h2>Dokumentasi Terbaru</h2>
+      <div class="article-container">
+          <div class="article-card">
+              <h3>ManualBook Dosen Submit Presensi</h3>
+              <p>Pelajari cara instalisasi vue.</p>
+              <a href="{{ '/ManualBook/Kiis_presensi' | url }}">Read More →</a>
+          </div>
+          <div class="article-card">
+              <h3>ManualBook Dosen Submit Nilai</h3>
+              <p>Langkah-langkah Dosen Submit Nilai Di KIIS.</p>
+              <a href="{{ '/ManualBook/Kiis_dosen' | url }}">Read More →</a>
+          </div>
+          <div class="article-card">
+              <h3>ManualBook Mahasiswa Mengisi KRS</h3>
+              <p>Tabel Desciption Yang Digunakan Oleh KIIS.</p>
+              <a href="{{ '/ManualBook/Kiis_mahasiswa' | url }}">Read More →</a>
+          </div>
+      </div>
+  </div>
+  
+    <!-- Testimonial Section -->
+    <div id="testimonial-section">
+      <h2>What Our Users Say</h2>
+      <div class="testimonial-container">
+          <div class="testimonial-slide">
+              <div class="testimonial-card">
+                  <p>"Dokumentasi ini sangat membantu! Mudah dimengerti dan lengkap."</p>
+                  <h4>- Adi, Developer</h4>
+              </div>
+              <div class="testimonial-card">
+                  <p>"Panduan yang luar biasa! Saya bisa mulai proyek dalam hitungan menit."</p>
+                  <h4>- Siti, UI/UX Designer</h4>
+              </div>
+              <div class="testimonial-card">
+                  <p>"Sangat direkomendasikan untuk tim pengembang yang butuh dokumentasi cepat."</p>
+                  <h4>- Budi, Software Engineer</h4>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  {% else %}
+    {{ super() }}
+  {% endif %}
+{% endblock %}
+
+{% block extrahead %}
+  <link rel="stylesheet" href="{{ 'stylesheets/extra.css' | url }}">
+{% endblock %}

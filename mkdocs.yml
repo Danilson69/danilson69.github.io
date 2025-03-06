@@ -1,0 +1,105 @@
+site_name: ManualBook
+site_url : https://sitename.example
+theme:
+  name: material
+  custom_dir: overrides
+  palette: 
+   #Dark Mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+      primary: deep purple
+      accent: light blue
+   #Light Mode
+    - scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
+      primary: deep purple
+      accent: black
+  
+  font:
+    text: Schibsted Grotesk
+    code: Roboto Mono
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
+  features:
+    - content.code.copy
+    - content.code.select
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.expand
+    - navigation.prune
+    - toc.integrate
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+
+plugins:
+  - search
+  - tags
+  - table-reader
+    
+nav:
+  - Home: 
+      path: index.html
+      hide:
+        - navigation
+        - toc
+  - Get Started:
+    - Pendahuluan: GetStarted/Start.md 
+  - ManualBook:
+    - Tata Cara Registrasi Kartu Rencana Studi (KRS) untuk Mahasiswa Melalui Aplikasi KIIS: ManualBook/Kiis_mahasiswa.md
+    - Tata Cara Submit Nilai Perkuliahan untuk Dosen Melalui Aplikasi KIIS: ManualBook/Kiis_dosen.md
+    - Tata Cara Approve Kartu Rencana Studi (KRS) untuk KAPRODI: ManualBook/Kiis_kaprodi.md
+    - Tata Cara Tata Cara Submit Presensi Perkuliahan untuk Dosen: ManualBook/Kiis_presensi.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/@ibikesatuan
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/ibikesatuan
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/ibikesatuan
+    - icon: fontawesome/brands/facebook
+      link: https://www.facebook.com/stiekesatuan
+  generator: false
+  
+extra_css:
+  - assets/custom.css
+
+extra_javascript:
+  - docs/assets/ibik3.png
+
+copyright: IBI Kesatuan © 2025
+
+markdown_extensions:
+  - attr_list
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - tables
